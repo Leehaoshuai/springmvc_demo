@@ -25,6 +25,11 @@ public class BookController {
         boolean flag = bookService.update(book);
         return new Result(flag ? Code.UPDATE_OK:Code.UPDATE_ERR,flag);
     }
+    @PutMapping
+    public Result logout(@RequestBody Book book) {
+        boolean flag = bookService.update(book);
+        return new Result(flag ? Code.UPDATE_OK:Code.UPDATE_ERR,flag);
+    }
 
     @DeleteMapping("/{id}")
     public Result delete(@PathVariable Integer id) {
