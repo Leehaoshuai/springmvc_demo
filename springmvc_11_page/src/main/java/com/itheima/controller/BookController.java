@@ -26,6 +26,12 @@ public class BookController {
         return new Result(flag ? Code.UPDATE_OK:Code.UPDATE_ERR,flag);
     }
 
+    @PutMapping
+    public Result query(@RequestBody Book book) {
+        boolean flag = bookService.update(book);
+        return new Result(flag ? Code.UPDATE_OK:Code.UPDATE_ERR,flag);
+    }
+
     @DeleteMapping("/{id}")
     public Result delete(@PathVariable Integer id) {
         boolean flag = bookService.delete(id);
